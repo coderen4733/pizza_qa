@@ -15,6 +15,6 @@ TARGET_SCHEMA = "pizza_qa"
 class Base(AsyncAttrs, DeclarativeBase):
     # metadata: 이 Base를 상속한 모든 테이블 정보가 저장되는 곳
     # MetaData(schema=TARGET_SCHEMA)
-    #  => 이 Base를 상속한 모든 테이블은 자동으로 rag_practice 스키마에 만들어짐
-    #  => 모델마다 __table_args__ = {"schema": "rag_practice"} 를 적지 않아도 됨
+    #  => 이 Base를 상속한 모든 테이블은 자동으로 pizza_qa 스키마에 만들어짐
+    #  => 모델마다 __table_args__ = {"schema": "pizza_qa"} 를 적지 않아도 됨
     metadata = MetaData(schema=TARGET_SCHEMA)

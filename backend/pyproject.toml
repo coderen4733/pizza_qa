@@ -4,6 +4,7 @@ version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
     "alembic>=1.20.0",  # Postgres DB 마이그레이션 관리하기 위해
+    "cryptography>=50.0.2",  # 해시용 Scrypt 활용하기 위해
     "fastapi>=0.142.4",
     "greenlet>=3.5.6",  # SQLAlchemy가 비동기를 사용할 수 있게 하기 위해
     "httpx>=0.28.1",
@@ -13,7 +14,6 @@ dependencies = [
     "pydantic[email]>=2.13.5",
     "pyjwt>=2.15.1",
     "python-multipart>=0.0.32",
-    "ruff>=0.16.10",
     "sqlalchemy>=2.1.4",  # ORM
     "uvicorn[standard]>=0.54.0",
 ]
@@ -25,3 +25,8 @@ line-length = 100
 [tool.ruff.lint]
 # 코드를 더 깔끔하게 강제하기 위한 린트 규칙 활성화 (선택 사항)
 select = ["E", "F", "I", "UP", "B"]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.16.10",
+]

@@ -43,6 +43,7 @@ async def lifespan(app: FastAPI):
         # ON-D-F. DB 연결 실패
         logger.critical(f"🔴 DB 연결에 실패했습니다. {db_err}")
         raise  # DB 연결 실패 시 바로 종료되도록. 만약 서버는 그대로 두고싶다면 주석 처리
+
     # ON-E. App 실행
     yield
 

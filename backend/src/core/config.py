@@ -44,10 +44,10 @@ class Settings(BaseSettings):
     db_echo: bool = False  # SQL을 콘솔에 출력할지 여부
 
     # Redis(Cloud) 관련
-    redis_url: str
+    redis_url: str | None = None
 
     # Vector DB(Qdrant) 관련
-    vector_db_url: str
+    vector_db_url: str | None = None
     vector_db_api_key: str | None = None
     vector_db_collection: str = "pizza"
     vector_db_timeout: int = 10  # Qdrant 요청 제한 시간 (단위: 초)
